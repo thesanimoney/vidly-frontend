@@ -16,7 +16,7 @@ const UseGetCourses = () => {
     const token = localStorage.getItem('token');
     return useQuery<Course[]>({
         queryKey: ['courses'],
-        queryFn: () => axios.get('http://localhost:8888/api/courses', {
+        queryFn: () => axios.get(import.meta.env.VITE_SERVER + '/api/courses', {
             headers: {
                 'x-auth-token': token
             }

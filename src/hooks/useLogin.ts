@@ -14,7 +14,7 @@ const useLogin = () => {
 
     return useMutation<AxiosResponse, AxiosError, Login>({
         mutationFn: async (data: Login) => {
-            return await axios.post('http://localhost:8888/login', data);
+            return await axios.post(import.meta.env.VITE_SERVER + '/login', data);
         },
         onSuccess: (response) => {
             const token = response.headers['x-auth-token'];

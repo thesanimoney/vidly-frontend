@@ -12,7 +12,7 @@ const UseGetUserInfo = () => {
     const token = localStorage.getItem('token');
     return useQuery<User>({
         queryKey: ['users'],
-        queryFn: () => axios.get('http://localhost:8888/api/me', {
+        queryFn: () => axios.get(import.meta.env.VITE_SERVER + '/api/me', {
             headers: {
                 'x-auth-token': token
             }

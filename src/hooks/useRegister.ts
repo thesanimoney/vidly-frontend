@@ -15,7 +15,7 @@ const UseRegister = () => {
 
     return useMutation<AxiosResponse, AxiosError, Register>({
         mutationFn: async (data: Register) => {
-            return await axios.post('http://localhost:8888/register', data)
+            return await axios.post(import.meta.env.VITE_SERVER + '/register', data)
         },
         onSuccess: (response) => {
             const token = response.headers['x-auth-token'];

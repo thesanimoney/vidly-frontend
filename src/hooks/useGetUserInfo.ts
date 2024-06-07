@@ -12,7 +12,7 @@ const UseGetUserInfo = () => {
     const token = localStorage.getItem('token');
     return useQuery<User>({
         queryKey: ['users'],
-        queryFn: () => axios.get('http://51.20.72.44' + '/api/me', {
+        queryFn: () => axios.get('http://13.49.159.65:3000' + '/api/me', {
             headers: {
                 'x-auth-token': token
             }

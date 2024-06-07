@@ -14,7 +14,7 @@ const useLogin = () => {
 
     return useMutation<AxiosResponse, AxiosError, Login>({
         mutationFn: async (data: Login) => {
-            return await axios.post('http://51.20.72.44' + '/login', data);
+            return await axios.post('http://13.49.159.65:3000' + '/login', data);
         },
         onSuccess: (response) => {
             const token = response.headers['x-auth-token'];

@@ -16,7 +16,7 @@ const UseGetCourses = () => {
     const token = localStorage.getItem('token');
     return useQuery<Course[]>({
         queryKey: ['courses'],
-        queryFn: () => axios.get('http://51.20.72.44' + '/api/courses', {
+        queryFn: () => axios.get('http://13.49.159.65:3000' + '/api/courses', {
             headers: {
                 'x-auth-token': token
             }
